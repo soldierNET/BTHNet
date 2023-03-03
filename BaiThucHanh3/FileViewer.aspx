@@ -15,7 +15,7 @@
         </header>
         <form>
             <input type="file" runat="server" id="inputFile"/>
-            <button type="submit">Gửi tập tin</button>
+            <button type="submit" runat="server" onserverclick="GuiFile_Click">Gửi tập tin</button>
         </form>
     </div>
 </body>

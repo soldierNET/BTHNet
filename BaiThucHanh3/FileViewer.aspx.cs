@@ -16,6 +16,11 @@ namespace BaiThucHanh3
             if (Page.IsPostBack)
                 return;
         }
+
+        protected void GuiFile_Click(object sender, EventArgs e)
+        {
+
+        }
     }
         
 }
