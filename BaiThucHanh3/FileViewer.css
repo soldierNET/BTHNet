@@ -1,0 +1,33 @@
+﻿:root {
+    --bg: purple;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+div {
+    border: 2px solid var(--bg);
+    max-width: 400px;
+}
+
+header {
+    background-color: var(--bg);
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+
+    header button {
+        background-color: darkslateblue;
+        border: none;
+        color: white;
+        cursor: pointer;
+        padding: 0.25rem 0.5rem;
+    }
+
+form{
+    display:flex;
+    flex-direction:column;
+}

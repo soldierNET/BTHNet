@@ -95,11 +95,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FileViewer.aspx" />
+    <Content Include="FileViewer.css" />
     <Content Include="Guestbook.aspx" />
     <Content Include="GuestBook.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileViewer.aspx.cs">
+      <DependentUpon>FileViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FileViewer.aspx.designer.cs">
+      <DependentUpon>FileViewer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Guestbook.aspx.cs">
       <DependentUpon>Guestbook.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
