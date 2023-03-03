@@ -1,0 +1,176 @@
+﻿:root {
+    font-size: 16px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #2c3e50;
+    background-color: #2c3e50;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+p, h1, h2, h3, h4, h5, h6, small {
+    line-height: 1.5;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.container {
+    background-color: #ecf0f1;
+    padding: 1rem;
+    min-width: 640px;
+    margin: 0;
+}
+
+form {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+}
+
+.input-group {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: first baseline;
+    gap: 1rem;
+}
+
+    .input-group > * {
+        flex-basis: 0;
+    }
+
+    .input-group > :first-child {
+        flex-grow: 1;
+    }
+
+    .input-group > input,
+    .input-group > textarea {
+        flex-grow: 5;
+        outline: none;
+        border: 1.5px solid #95a5a6;
+        background-color: #ecf0f1;
+        color: #2c3e50;
+        font-family: 'Roboto', Arial, sans-serif;
+        padding: 0.25rem 0.5rem;
+    }
+
+        .input-group > input:hover,
+        .input-group > textarea:hover {
+            border-color: #7f8c8d;
+            outline: 1.5px solid #7f8c8d;
+        }
+
+        .input-group > input:focus,
+        .input-group > textarea:focus {
+            border-color: #f1c40f;
+            outline: 1.5px solid #f1c40f;
+            background-color: #f6f6f6;
+        }
+
+    .input-group > textarea {
+        height: 10rem;
+    }
+
+    .input-group > div:last-child {
+        flex-grow: 5;
+        overflow: visible;
+        margin-left: 0.5rem;
+    }
+
+    .input-group > span {
+        flex-basis: 81.5%;
+        margin-left: 18.5%;
+        color: orangered;
+        margin-top: -1rem;
+    }
+
+    .input-group button {
+        cursor: pointer;
+        margin: -0.25rem -0.5rem;
+        padding: .5rem 1rem;
+        border: none;
+        border-radius: .25rem;
+        color: #2c3e50;
+        outline: 1.5px solid #95a5a6;
+        background-image: linear-gradient(to bottom, #ecf0f1, #bdc3c7);
+    }
+
+        .input-group button:hover,
+        .input-group button:focus {
+            outline: 2px solid #34495e;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, .4);
+            z-index: 100;
+        }
+
+        .input-group button:active {
+            outline: 2px solid #f1c40f;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, .2);
+            z-index: 100;
+        }
+
+.comment-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    gap: 2rem;
+}
+
+.comment {
+    display: flex;
+    gap: 1rem;
+}
+
+.avatar-container {
+    width: 48px;
+    height: 48px;
+    background-color: #bdc3c7;
+    border-radius: 50%;
+    outline: 2px solid #fff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .4);
+    overflow: hidden;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'%3E%3C/g%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'%3E%3C/g%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Cpath d='M9 11C9.55228 11 10 10.5523 10 10C10 9.44772 9.55228 9 9 9C8.44772 9 8 9.44772 8 10C8 10.5523 8.44772 11 9 11Z' fill='%230F1729'%3E%3C/path%3E%3Cpath d='M16 10C16 10.5523 15.5523 11 15 11C14.4477 11 14 10.5523 14 10C14 9.44772 14.4477 9 15 9C15.5523 9 16 9.44772 16 10Z' fill='%230F1729'%3E%3C/path%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12Z' fill='%230F1729'%3E%3C/path%3E%3Cpath d='M9.77332 14.366C9.42674 13.9431 8.80344 13.8766 8.37531 14.2191C7.94404 14.5641 7.87473 15.1942 8.21974 15.6255L8.22037 15.6262L8.22171 15.6279L8.22469 15.6316L8.23186 15.6403L8.25103 15.6632C8.26596 15.6807 8.28523 15.7026 8.30885 15.7285C8.35604 15.7801 8.4209 15.8474 8.50356 15.9248C8.66848 16.0795 8.90695 16.2773 9.22 16.473C9.85005 16.8668 10.7812 17.25 12 17.25C13.2188 17.25 14.1499 16.8668 14.78 16.473C15.093 16.2773 15.3315 16.0795 15.4964 15.9248C15.5791 15.8474 15.644 15.7801 15.6912 15.7285C15.7148 15.7026 15.734 15.6807 15.749 15.6632L15.7681 15.6403L15.7753 15.6316L15.7783 15.6279L15.7796 15.6262L15.7809 15.6247C16.1259 15.1934 16.056 14.5641 15.6247 14.2191C15.1966 13.8766 14.5733 13.9431 14.2267 14.366C14.225 14.368 14.2211 14.3724 14.2151 14.3789C14.1998 14.3957 14.1709 14.4261 14.1286 14.4658C14.0435 14.5455 13.907 14.6602 13.72 14.777C13.3501 15.0082 12.7812 15.25 12 15.25C11.2188 15.25 10.6499 15.0082 10.28 14.777C10.093 14.6602 9.95652 14.5455 9.87144 14.4658C9.8291 14.4261 9.80021 14.3957 9.7849 14.3789C9.77889 14.3724 9.77503 14.368 9.77332 14.366Z' fill='%230F1729'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+    background-size: cover;
+    color: #f1c40f;
+}
+
+.comment-content {
+    width: 100%;
+    max-width: 520px;
+}
+
+.name {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+.email {
+    color: #7f8c8d;
+}
+
+.comment .title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+#commentCount {
+    background-color: #2c3e50;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    color: #bdc3c7;
+}
