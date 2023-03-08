@@ -15,18 +15,16 @@ namespace BaiThucHanh4
 
             try
             {
-
-            text = PreviousPage.Request.Form.AllKeys.Length.ToString();
+                text = Request.Form.Get("txtHoTen")+"<br>"+ Request.Form.Get("txtGioiTinh") + "<br>" + Request.Form.Get("txtNgaySinh") + "<br>" + Request.Form.Get("txtDiaChi") + "<br>";
             } catch(Exception ex)
             {
                 throw ex;
             }
 
             if (text != "")
-                formInfo.InnerText = "The string posted from the previous page is "
-                                   + text + ".";
+                formInfo.InnerHtml = text;
             else
-                formInfo.InnerText = "An empty string was posted from the previous page.";
+                formInfo.InnerHtml = "An empty string was posted from the previous page.";
         }
     }
 }
