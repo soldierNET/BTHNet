@@ -7,6 +7,9 @@
     <title></title>
 </head>
 <body>
-    <h1>Xin chào <span id="username"></span></h1>
+    <h1>Xin chào <span id="txtGreetUsername" runat="server"></span></h1>
+    <form id="form1" runat="server">
+    <button id="btnLogout" runat="server" onserverclick="btnLogout_ServerClick">Đăng xuất</button>
+    </form>
 </body>
 </html>

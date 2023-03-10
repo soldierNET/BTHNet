@@ -33,6 +33,15 @@ namespace BaiThucHanh5
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtUsername;
 
         /// <summary>
+        /// vUsername control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator vUsername;
+
+        /// <summary>
         /// txtPassword control.
         /// </summary>
         /// <remarks>
@@ -42,13 +51,31 @@ namespace BaiThucHanh5
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword txtPassword;
 
         /// <summary>
-        /// saveChkbox control.
+        /// vPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox saveChkbox;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator vPassword;
+
+        /// <summary>
+        /// chkSave control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox chkSave;
+
+        /// <summary>
+        /// info control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl info;
 
         /// <summary>
         /// btnSubmit control.

@@ -12,16 +12,19 @@
         <div class="input-group">
             <label for="txtUsername">Tên người dùng</label>
             <input type="text" id="txtUsername" runat="server"/>
+            <asp:RequiredFieldValidator ID="vUsername" runat="server" ErrorMessage="Nhập tên đăng nhập" ControlToValidate="txtUsername" CssClass="invalid"></asp:RequiredFieldValidator>
         </div>
         <div class="input-group">
-            <label for="txtPassword">Password</label>
+            <label for="txtPassword">Mật khẩu</label>
             <input type="password" id="txtPassword" runat="server"/>
+            <asp:RequiredFieldValidator ID="vPassword" runat="server" ErrorMessage="Nhập mật khẩu" ControlToValidate="txtPassword" CssClass="invalid"></asp:RequiredFieldValidator>
         </div>
         <div>
-            <input type="checkbox" id="saveChkbox" runat="server" />
-            <span>Nhớ tài khoản</span>
+            <input type="checkbox" id="chkSave" runat="server" />
+            <label for="chkSave">Nhớ tài khoản</label>
         </div>
-        <input id="btnSubmit" class="btn" type="submit" value="Sign in now!" runat="server" onserverclick="btnSubmit_ServerClick"/>
+        <div id="info" runat="server"></div>
+        <input id="btnSubmit" class="btn" type="submit" value="Đăng nhập" runat="server" onserverclick="btnSubmit_ServerClick"/>
     </form>
 </body>
 </html>
