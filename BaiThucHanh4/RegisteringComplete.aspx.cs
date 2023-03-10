@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text.RegularExpressions;
 
 namespace BaiThucHanh4
 {
@@ -15,7 +16,11 @@ namespace BaiThucHanh4
 
             try
             {
-                text = Request.Form.Get("txtHoTen")+"<br>"+ Request.Form.Get("txtGioiTinh") + "<br>" + Request.Form.Get("txtNgaySinh") + "<br>" + Request.Form.Get("txtDiaChi") + "<br>";
+                text = Request.Form.Get("txtHoTen") + "<br>" + 
+                    Request.Form.Get("txtGioiTinh") + "<br>" +
+                    Request.Form.Get("txtNgaySinh") + "<br>" + 
+                    Request.Form.Get("txtDiaChi") + "<br>" + 
+                    Request.Form.Get("txtLuong");
             } catch(Exception ex)
             {
                 throw ex;

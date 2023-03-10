@@ -56,9 +56,7 @@
                     <option value="Phòng VIP đôi">Phòng VIP đôi</option>
                 </select>
             </div>
-            <div class="input-group">
                 <button type="submit" runat="server" onserverclick="btnDangKy_Click">Đăng ký</button>
-            </div>
                 <asp:ValidationSummary ID="txtTomTatLoi" runat="server" />
             <div id="txtThongBao" runat="server">
             </div>

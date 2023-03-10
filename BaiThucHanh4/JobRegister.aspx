@@ -81,7 +81,7 @@
                 </div>
                 <div class="input-group">
                     <label for="txtLuong">Mức lương thỏa thuận</label>
-                    <input type="number" id="txtLuong" runat="server" />VND
+                    <span class="input-group"><input type="number" id="txtLuong" runat="server" />VND</span>
                     <asp:RequiredFieldValidator ID="vLuong" runat="server" ErrorMessage="Nhập mức lương" ControlToValidate="txtLuong"></asp:RequiredFieldValidator>
                 </div>
             </fieldset>

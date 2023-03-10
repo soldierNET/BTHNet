@@ -27,6 +27,7 @@ p, h1, h2, h3, h4, h5, h6, small {
     background-color: #ecf0f1;
     padding: 1rem;
     min-width: 640px;
+    max-width: 720px;
     margin: 0;
 }
 
@@ -57,25 +58,13 @@ legend{
 
 .input-group {
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: first baseline;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
 }
-
-    .input-group > * {
-        flex-basis: 0;
-    }
-
-    .input-group > :first-child, .input-group > :last-child {
-        flex-grow: 1;
-    }
 
     .input-group > input,
     .input-group > textarea,
     .input-group > select {
-        flex-grow: 3;
         outline: none;
         border: 1.5px solid #95a5a6;
         background-color: #ecf0f1;
@@ -100,9 +89,9 @@ legend{
         height: 10rem;
     }
 
-    .input-group button {
+   button, input[type="submit"] {
         cursor: pointer;
-        margin: 1rem 15rem;
+        margin: 0.5rem 15rem;
         padding: .5rem 1rem;
         border: none;
         border-radius: .25rem;
@@ -111,15 +100,18 @@ legend{
         background-image: linear-gradient(to bottom, #ecf0f1, #bdc3c7);
     }
 
-        .input-group button:hover,
-        .input-group button:focus {
-            outline: 2px solid #34495e;
-            box-shadow: 0 4px 4px rgba(0, 0, 0, .4);
-            z-index: 100;
-        }
+    button:hover,
+    button:focus,
+    input[type="submit"]:hover,
+    input[type="submit"]:focus {
+        outline: 2px solid #34495e;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, .4);
+        z-index: 100;
+    }
 
-        .input-group button:active {
-            outline: 2px solid #f1c40f;
-            box-shadow: 0 4px 4px rgba(0, 0, 0, .2);
-            z-index: 100;
-        }
+    button:active,
+    input[type="submit"]:active {
+        outline: 2px solid #f1c40f;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, .2);
+        z-index: 100;
+    }
