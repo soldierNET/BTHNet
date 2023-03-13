@@ -11,22 +11,29 @@ namespace BaiThucHanh5
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string name = Session["username"]?.ToString();
-            if (name != null)
+            string password = Session["password"]?.ToString();
+            if(password != null)
             {
-            txtGreetUsername.InnerText = Session["username"].ToString();
+                txtGreetUsername.InnerText = Session["username"]?.ToString();
+                return;
             }
-            else
+
+            password = Application["password"]?.ToString();
+            if (password != null)
             {
-                Response.Redirect("Login.aspx");
+                txtGreetUsername.InnerText = Application["username"]?.ToString();
+                return;
             }
+
+            Response.Redirect("Login.aspx");
         }
 
         protected void btnLogout_ServerClick(object sender, EventArgs e)
         {
-            txtGreetUsername.InnerText = Session["username"].ToString();
             Session.Remove("username");
             Session.Remove("password");
+            Application.Remove("username");
+            Application.Remove("password");
             Response.Redirect("Login.aspx");
         }
     }

@@ -11,7 +11,7 @@ namespace BaiThucHanh5
 {
 
 
-    public partial class Login
+    public partial class Login2
     {
 
         /// <summary>

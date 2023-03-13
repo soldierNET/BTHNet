@@ -17,13 +17,13 @@ namespace BaiThucHanh5
             string username = Request.Cookies["username"]?.Value.ToString();
             string password = Request.Cookies["password"]?.Value.ToString();
             txtUsername.Value = username;
-            txtPassword.Value = password;
+            txtPassword.Attributes.Add("value", password);
         }
         protected void btnSubmit_ServerClick(object sender, EventArgs e)
         {
             if (!Page.IsValid)
                 return;
-            if (txtUsername.Value != "tanphat" || txtPassword.Value != "12345")
+            if (txtUsername.Value != "tanphat" || txtPassword.Attributes["value"] != "12345")
             {
                 info.InnerText = "Sai thông tin";
                 return;
@@ -31,10 +31,10 @@ namespace BaiThucHanh5
             if (chkSave.Checked)
             {
                 Response.Cookies.Add(new HttpCookie("username", txtUsername.Value));
-                Response.Cookies.Add(new HttpCookie("password", txtPassword.Value));
+                Response.Cookies.Add(new HttpCookie("password", txtPassword.Attributes["value"]));
             }
             Session.Add("username", txtUsername.Value);
-            Session.Add("password", txtPassword.Value);
+            Session.Add("password", txtPassword.Attributes["value"]);
             Response.Redirect("Default.aspx");
         }
     }

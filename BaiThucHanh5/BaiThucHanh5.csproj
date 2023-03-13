@@ -68,8 +68,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
     <Content Include="Login.css" />
+    <Content Include="Login2.aspx" />
+    <Content Include="SessionCount.aspx" />
     <Content Include="ViewInfo.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -81,6 +84,9 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -88,7 +94,21 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Login2.aspx.cs">
+      <DependentUpon>Login2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login2.aspx.designer.cs">
+      <DependentUpon>Login2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SessionCount.aspx.cs">
+      <DependentUpon>SessionCount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SessionCount.aspx.designer.cs">
+      <DependentUpon>SessionCount.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewInfo.aspx.cs">
       <DependentUpon>ViewInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
