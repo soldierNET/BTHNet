@@ -19,14 +19,14 @@ namespace BaiThucHanh5
             if (!Page.IsValid)
                 return;
 
-            if (txtPassword.Attributes["value"] != "123")
+            if (txtPassword.Text != "123")
             {
                 info.InnerText = "Sai thông tin";
                 return;
             }
             
             Application.Add("username", txtUsername.Value);
-            Application.Add("password", txtPassword.Attributes["value"]);
+            Application.Add("password", txtPassword.Text);
             Response.Redirect("Default.aspx");
         }
     }

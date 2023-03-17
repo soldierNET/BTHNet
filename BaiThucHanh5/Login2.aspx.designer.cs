@@ -60,15 +60,6 @@ namespace BaiThucHanh5
         protected global::System.Web.UI.WebControls.RequiredFieldValidator vPassword;
 
         /// <summary>
-        /// chkSave control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox chkSave;
-
-        /// <summary>
         /// info control.
         /// </summary>
         /// <remarks>

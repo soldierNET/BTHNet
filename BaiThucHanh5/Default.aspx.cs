@@ -11,17 +11,17 @@ namespace BaiThucHanh5
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string password = Session["password"]?.ToString();
-            if(password != null)
+            string name = Session["username"]?.ToString();
+            if(name != null)
             {
-                txtGreetUsername.InnerText = Session["username"]?.ToString();
+                txtGreetUsername.InnerText = name;
                 return;
             }
 
-            password = Application["password"]?.ToString();
-            if (password != null)
+            name = Application["username"]?.ToString();
+            if (name != null)
             {
-                txtGreetUsername.InnerText = Application["username"]?.ToString();
+                txtGreetUsername.InnerText = name;
                 return;
             }
 
@@ -30,11 +30,21 @@ namespace BaiThucHanh5
 
         protected void btnLogout_ServerClick(object sender, EventArgs e)
         {
-            Session.Remove("username");
-            Session.Remove("password");
-            Application.Remove("username");
-            Application.Remove("password");
-            Response.Redirect("Login.aspx");
+            if(Session["username"] != null)
+            {
+                Session.Remove("username");
+                Session.Remove("password");
+                Response.Redirect("Login.aspx");
+                return;
+            }
+
+            if (Application["username"] != null)
+            {
+                Application.Remove("username");
+                Application.Remove("password");
+                Response.Redirect("Login2.aspx");
+                return;
+            }
         }
     }
 }
