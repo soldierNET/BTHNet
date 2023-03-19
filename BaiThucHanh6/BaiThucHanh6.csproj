@@ -80,6 +80,7 @@
     <Compile Include="quanLyTaiKhoan.aspx.designer.cs">
       <DependentUpon>quanLyTaiKhoan.aspx</DependentUpon>
     </Compile>
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
