@@ -4,12 +4,16 @@ using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace BaiThucHanh7.Controller
 {
     public class UserController
     {
-        string connectionString = ConfigurationManager.ConnectionStrings["UserDB"].ConnectionString;
+        public static string connectionString
+        {
+            get => ConfigurationManager.ConnectionStrings["UserDB"].ConnectionString;
+        }
 
         public static bool CheckUser(string name)
         {
@@ -27,10 +31,21 @@ namespace BaiThucHanh7.Controller
             return false;
         }
 
+        public static DataTable GetUser()
+        {
+            string queryString = @"select * from user";
+            SqlDataAdapter adapter = new SqlDataAdapter(queryString, connectionString);
+
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            return dataTable;
+        }
+
         public static bool Insert(User user)
         {
-            string queryString = @"insert into user() 
-                values(@username, @password, @firstName, @lastName, @gender, @email, @address)";
+            string queryString = @"INSERT INTO [dbo].[UserInfo] 
+                                    ([Id], [Username], [Password], [FirstName], [LastName], [Email], [Gender], [Address])
+                                    VALUES (@id, @username, @password, @firstName, @lastName, @email, @gender, @address)";
             SqlConnection connection = new SqlConnection(queryString);
             SqlCommand command = new SqlCommand(queryString, connection);
             command.Parameters.AddWithValue("@username", user.username);

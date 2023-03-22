@@ -31,7 +31,7 @@ namespace BaiThucHanh7
 
         public void LoadDataToView()
         {
-            GridView1.DataSource = userList;
+            GridView1.DataSource = UserController.GetUser();
             GridView1.DataBind();
         }
 
