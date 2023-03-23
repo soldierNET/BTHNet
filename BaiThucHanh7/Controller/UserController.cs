@@ -15,12 +15,12 @@ namespace BaiThucHanh7.Controller
             get => ConfigurationManager.ConnectionStrings["UserDB"].ConnectionString;
         }
 
-        public static bool CheckUser(string name)
+        public static bool Exist(string username)
         {
-            string queryString = @"select count(*) from user where username = @name";
-            SqlConnection connection = new SqlConnection(queryString);
+            string queryString = @"SELECT COUNT(*) FROM [dbo].[UserInfo] WHERE Username = @name";
+            SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand command = new SqlCommand(queryString, connection);
-            command.Parameters.AddWithValue("@name", name);
+            command.Parameters.AddWithValue("@name", username);
             connection.Open();
             int count = (int)command.ExecuteScalar();
             connection.Close();
@@ -31,9 +31,9 @@ namespace BaiThucHanh7.Controller
             return false;
         }
 
-        public static DataTable GetUser()
+        public static DataTable GetDataTable()
         {
-            string queryString = @"select * from user";
+            string queryString = @"SELECT * FROM [dbo].[UserInfo]";
             SqlDataAdapter adapter = new SqlDataAdapter(queryString, connectionString);
 
             DataTable dataTable = new DataTable();
@@ -41,13 +41,26 @@ namespace BaiThucHanh7.Controller
             return dataTable;
         }
 
+        public static int Count()
+        {
+            string queryString = @"SELECT COUNT(*) FROM [dbo].[UserInfo]";
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(queryString, connection);
+            connection.Open();
+            int count = (int)command.ExecuteScalar();
+            connection.Close();
+            return count;
+        }
+
+
         public static bool Insert(User user)
         {
             string queryString = @"INSERT INTO [dbo].[UserInfo] 
                                     ([Id], [Username], [Password], [FirstName], [LastName], [Email], [Gender], [Address])
                                     VALUES (@id, @username, @password, @firstName, @lastName, @email, @gender, @address)";
-            SqlConnection connection = new SqlConnection(queryString);
+            SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand command = new SqlCommand(queryString, connection);
+            command.Parameters.AddWithValue("@id", Count()+1);
             command.Parameters.AddWithValue("@username", user.username);
             command.Parameters.AddWithValue("@password", user.password);
             command.Parameters.AddWithValue("@firstName", user.firstName);
@@ -60,10 +73,22 @@ namespace BaiThucHanh7.Controller
             int inserted = (int)command.ExecuteNonQuery();
             connection.Close();
 
-            if (inserted > 0)
-                return true;
+            return (inserted > 0);
+        }
+        
+        public static bool Delete(string username)
+        {
+            string queryString = @"DELETE FROM [dbo].[UserInfo] 
+                                    WHERE Username = @username";
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(queryString, connection);
+            command.Parameters.AddWithValue("@username", username);
 
-            return false;
+            connection.Open();
+            int deleted = (int)command.ExecuteNonQuery();
+            connection.Close();
+
+            return (deleted > 0);
         }
     }
 }

@@ -32,8 +32,8 @@
             <input type="text" name="" id="txtAddress" runat="server" />
             <div class="input-group">
                 <button type="submit" runat="server" id="btnSave" onserverclick="btnSave_ServerClick">Lưu</button>
-                <button type="submit" runat="server">Xoá</button>
-                <button type="reset" onclick="form.reset();return false;">Xoá trống form</button>
+                <button type="submit" runat="server" id="btnDelete" onserverclick="btnDelete_ServerClick">Xoá</button>
+                <button type="reset">Xoá trống form</button>
             </div>
             <div class="input-group">
                 <p id="txtMessage" runat="server"></p>
