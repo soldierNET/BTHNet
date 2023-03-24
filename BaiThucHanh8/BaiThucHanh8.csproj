@@ -69,7 +69,6 @@
   <ItemGroup>
     <Content Include="quanLyTaiKhoan.aspx" />
     <Content Include="QuanLyTaiKhoan.css" />
-    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
