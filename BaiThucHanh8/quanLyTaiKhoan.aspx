@@ -24,9 +24,9 @@
             <label for="">Giới tính</label>
             <div class="input-group">
                 <label for="radMale">
-                    <input type="radio" name="gender" id="radMale" runat="server" />Nam</label>
+                    <input type="radio" name="gender" id="radMale" runat="server" value="male"/>Nam</label>
                 <label for="radFemale">
-                    <input type="radio" name="gender" id="radFemale" runat="server" />Nữ</label>
+                    <input type="radio" name="gender" id="radFemale" runat="server" value="female"/>Nữ</label>
             </div>
             <label for="txtAddress">Địa chỉ</label>
             <input type="text" name="" id="txtAddress" runat="server" />

@@ -84,6 +84,7 @@ namespace BaiThucHanh8
             if (UserController.Delete(username))
             {
                 txtMessage.InnerText = $"Tài khoản {username} đã bị xóa";
+                LoadDataToView();
                 return;
             }
             txtMessage.InnerText = "Đã xảy ra lỗi";
