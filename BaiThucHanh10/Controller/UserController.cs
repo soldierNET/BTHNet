@@ -17,7 +17,7 @@ namespace BaiThucHanh10.Controller
 
         public static bool Exist(string username)
         {
-            string queryString = @"SELECT COUNT(*) FROM [dbo].[UserInfo] WHERE Username = @name";
+            string queryString = @"SELECT COUNT(*) FROM [dbo].[UserInfo] WHERE UserName = @name";
             SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand command = new SqlCommand(queryString, connection);
             command.Parameters.AddWithValue("@name", username);
@@ -33,7 +33,7 @@ namespace BaiThucHanh10.Controller
         
         public static User GetUser(string username)
         {
-            string queryString = @"SELECT * FROM [dbo].[UserInfo] WHERE Username = @name";
+            string queryString = @"SELECT * FROM [dbo].[UserInfo] WHERE UserName = @name";
             SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand command = new SqlCommand(queryString, connection);
             command.Parameters.AddWithValue("@name", username);
@@ -46,9 +46,9 @@ namespace BaiThucHanh10.Controller
                     reader["LastName"].ToString(),
                     reader["Email"].ToString(),
                     (bool)reader["Gender"],
-                    reader["Address"].ToString(),
-                    reader["Username"].ToString(),
-                    reader["Password"].ToString(),
+                    reader["AddRess"].ToString(),
+                    reader["UserName"].ToString(),
+                    reader["PassWord"].ToString(),
                     reader["Avatar"].ToString()
                     );
             }
@@ -81,7 +81,7 @@ namespace BaiThucHanh10.Controller
         public static bool Insert(User user)
         {
             string queryString = @"INSERT INTO [dbo].[UserInfo] 
-                                    ([Id], [Username], [Password], [FirstName], [LastName], [Email], [Gender], [Address], [Avatar])
+                                    ([Id], [UserName], [PassWord], [FirstName], [LastName], [Email], [Gender], [AddRess], [Avatar])
                                     VALUES (@id, @username, @password, @firstName, @lastName, @email, @gender, @address, @avatar)";
             SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand command = new SqlCommand(queryString, connection);
@@ -105,14 +105,14 @@ namespace BaiThucHanh10.Controller
         public static bool Update(User user)
         {
             string queryString = @"UPDATE [dbo].[UserInfo]
-                                    SET Password = @password, 
+                                    SET PassWord = @password, 
                                         FirstName = @firstName, 
                                         LastName = @lastName, 
                                         Email = @email, 
                                         Gender = @gender, 
-                                        Address = @address,
-                                        Avatar = avatar
-                                    WHERE Username = @username";
+                                        AddRess = @address,
+                                        Avatar = @avatar
+                                    WHERE UserName = @username";
             SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand command = new SqlCommand(queryString, connection);
             command.Parameters.AddWithValue("@username", user.username);
@@ -133,7 +133,7 @@ namespace BaiThucHanh10.Controller
         public static bool Delete(string username)
         {
             string queryString = @"DELETE FROM [dbo].[UserInfo] 
-                                    WHERE Username = @username";
+                                    WHERE UserName = @username";
             SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand command = new SqlCommand(queryString, connection);
             command.Parameters.AddWithValue("@username", username);
